@@ -10,8 +10,8 @@ app.use(express.json());
 
 app.use('/tasks', taskRoutes);
 
-sequelize.sync({ force: true }).then(() => console.log('DB synced'));
-
+sequelize.sync().then(() => console.log('DB synced'));
+  
 app.listen(process.env.PORT || 5000, () => {
   console.log('Server running');
 });
